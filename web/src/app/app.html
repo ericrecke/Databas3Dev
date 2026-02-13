@@ -1,0 +1,185 @@
+﻿<main class="page" [class.light-mode]="theme() === 'light'">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark">R</span>
+        <div class="brand-text">
+          <span class="brand-title">Eric Recke</span>
+          <span class="brand-sub">Angular • Node • .NET • DB</span>
+        </div>
+      </div>
+      <nav class="site-nav">
+        <a class="nav-link" href="#inicio">{{ t().nav.home }}</a>
+        <a class="nav-link" href="#servicios">{{ t().nav.services }}</a>
+        <a class="nav-link" href="#portafolio">{{ t().nav.portfolio }}</a>
+        <a class="nav-link" href="#contacto">{{ t().nav.contact }}</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="btn btn-ghost btn-theme"
+          type="button"
+          (click)="toggleTheme()"
+          [attr.aria-label]="theme() === 'dark' ? t().themeLabelLight : t().themeLabelDark"
+          [attr.title]="theme() === 'dark' ? t().themeLabelLight : t().themeLabelDark"
+        >
+          <span aria-hidden="true">{{ theme() === 'dark' ? '☀' : '☾' }}</span>
+        </button>
+        <button class="btn btn-ghost btn-lang" type="button" (click)="toggleLanguage()">{{ t().switchLabel }}</button>
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/ericrecke/" target="_blank" rel="noopener">
+          {{ t().headerContact }}
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{{ t().eyebrow }}</p>
+        <h1>{{ t().title }}</h1>
+        <p class="hero-subtitle">{{ t().subtitle }}</p>
+        <p class="hero-desc">
+          {{ t().description }}
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#portafolio">{{ t().portfolioButton }}</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/ericrecke/" target="_blank" rel="noopener">
+            {{ t().contactButton }}
+          </a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip">{{ t().chip1 }}</span>
+          <span class="chip">{{ t().chip2 }}</span>
+          <span class="chip">{{ t().chip3 }}</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait-card">
+          <div class="portrait-glow"></div>
+          <div class="portrait"></div>
+          <div class="floating-icons">
+            <div class="icon-badge angular">A</div>
+            <div class="icon-badge dotnet">.NET</div>
+            <div class="icon-badge node">JS</div>
+            <div class="icon-badge db">SQL</div>
+          </div>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span class="metric-value">+7</span>
+            <span class="metric-label">{{ t().metricYears }}</span>
+          </div>
+          <div class="metric">
+            <span class="metric-value">45+</span>
+            <span class="metric-label">{{ t().metricProjects }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>{{ t().servicesTitle }}</h2>
+        <p>{{ t().servicesSubtitle }}</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card accent-red">
+          <div class="service-icon">A</div>
+          <h3>{{ t().serviceFrontend }}</h3>
+          <p>{{ t().serviceFrontendDesc }}</p>
+        </article>
+        <article class="service-card accent-green">
+          <div class="service-icon">JS</div>
+          <h3>{{ t().serviceBackend }}</h3>
+          <p>{{ t().serviceBackendDesc }}</p>
+        </article>
+        <article class="service-card accent-blue">
+          <div class="service-icon">DB</div>
+          <h3>{{ t().serviceDb }}</h3>
+          <p>{{ t().serviceDbDesc }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portafolio" class="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>{{ t().projectsTitle }}</h2>
+        <p>{{ t().projectsSubtitle }}</p>
+      </div>
+      <div class="portfolio-grid">
+        <article class="portfolio-card">
+          <a class="portfolio-link" href="https://instante.ar/" target="_blank" rel="noopener">
+            <div class="portfolio-thumb thumb-commerce"></div>
+            <h4>Instante Band</h4>
+            <span class="portfolio-cta">{{ t().viewProject }}</span>
+          </a>
+        </article>
+        <article class="portfolio-card">
+          <a class="portfolio-link" href="https://phadatabas3.vercel.app/" target="_blank" rel="noopener">
+            <div class="portfolio-thumb thumb-tasks"></div>
+            <h4>PHA Databas3</h4>
+            <span class="portfolio-cta">{{ t().viewProject }}</span>
+          </a>
+        </article>
+        <article class="portfolio-card">
+          <div class="portfolio-thumb thumb-crm"></div>
+          <h4>{{ t().crmName }}</h4>
+        </article>
+      </div>
+      <div class="center">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/ericrecke/" target="_blank" rel="noopener">
+          {{ t().moreProjects }}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="cta">
+    <div class="container cta-card">
+      <div>
+        <h2>{{ t().ctaTitle }}</h2>
+        <p>{{ t().ctaSubtitle }}</p>
+      </div>
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/ericrecke/" target="_blank" rel="noopener">
+        {{ t().contactButton }}
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-item">
+        <span class="footer-icon">R</span>
+        <p>{{ t().footer1 }}</p>
+      </div>
+      <div class="footer-item">
+        <span class="footer-icon">∞</span>
+        <p>{{ t().footer2 }}</p>
+      </div>
+      <div class="footer-item">
+        <span class="footer-icon">✓</span>
+        <p>{{ t().footer3 }}</p>
+      </div>
+    </div>
+    <div class="container footer-links">
+      <button
+        class="btn btn-ghost btn-theme"
+        type="button"
+        (click)="toggleTheme()"
+        [attr.aria-label]="theme() === 'dark' ? t().themeLabelLight : t().themeLabelDark"
+        [attr.title]="theme() === 'dark' ? t().themeLabelLight : t().themeLabelDark"
+      >
+        <span aria-hidden="true">{{ theme() === 'dark' ? '☀' : '☾' }}</span>
+      </button>
+      <button class="btn btn-ghost btn-lang" type="button" (click)="toggleLanguage()">{{ t().switchLabel }}</button>
+      <a class="footer-link" href="https://www.linkedin.com/in/ericrecke/" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+</main>
+
